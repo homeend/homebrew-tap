@@ -5,21 +5,21 @@
 class Wt < Formula
   desc "Fast git worktree manager with lifecycle hooks and cd-on-switch shell integration"
   homepage "https://github.com/homeend/worktrees"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/homeend/worktrees/releases/download/v0.2.0/wt_0.2.0_darwin_amd64.tar.gz"
-      sha256 "993322663dd93bb39345b9fb180f5ce7e579316ff9bc25f47010212ddfadac66"
+      url "https://github.com/homeend/worktrees/releases/download/v0.2.1/wt_0.2.1_darwin_amd64.tar.gz"
+      sha256 "123eca545212e0e18364524c0cd1ea79244cc36b21ed01e87c3146a881f8620e"
 
       define_method(:install) do
         bin.install "wt"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/homeend/worktrees/releases/download/v0.2.0/wt_0.2.0_darwin_arm64.tar.gz"
-      sha256 "07bc38cfb1a37bbb79f6573c92c45aec8ddf9a36639106ce97b507f7c4e24a35"
+      url "https://github.com/homeend/worktrees/releases/download/v0.2.1/wt_0.2.1_darwin_arm64.tar.gz"
+      sha256 "f755bb5d3511c621a14976689e69e4ece274896019c588b5c33f70a95d7e3136"
 
       define_method(:install) do
         bin.install "wt"
@@ -29,15 +29,15 @@ class Wt < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/homeend/worktrees/releases/download/v0.2.0/wt_0.2.0_linux_amd64.tar.gz"
-      sha256 "37809bd38ee08282d9b7c124b0154fbc1583fe275ddb9001bc90798f6493fc24"
+      url "https://github.com/homeend/worktrees/releases/download/v0.2.1/wt_0.2.1_linux_amd64.tar.gz"
+      sha256 "3d5381457b560a47eda9ed3f1ef45db4dfe9904f7a69d4c5a1483a6fc732a80f"
       define_method(:install) do
         bin.install "wt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/homeend/worktrees/releases/download/v0.2.0/wt_0.2.0_linux_arm64.tar.gz"
-      sha256 "dba80a5c922cdf06b345553ee94c9e9e11f939cd880f8bb3069b1cc0a6451b81"
+      url "https://github.com/homeend/worktrees/releases/download/v0.2.1/wt_0.2.1_linux_arm64.tar.gz"
+      sha256 "5e11cf914c01537cffd6e78e06ce84315cd5894b10876f9976898b42cce41221"
       define_method(:install) do
         bin.install "wt"
       end
@@ -46,8 +46,11 @@ class Wt < Formula
 
   def caveats
     <<~EOS
-      For cd-on-Enter in the TUI, install the shell function once:
+      For cd-on-Enter in the TUI, add to ~/.zshrc / ~/.bashrc:
         eval "$(wt shell-init zsh)"    # or: shell-init bash
+      Use exactly that eval-from-PATH form. Do NOT use
+      `wt shell-init --install` with a brew-installed wt: it pins the
+      version-numbered Cellar path, which breaks on the next upgrade.
     EOS
   end
 
