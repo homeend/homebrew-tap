@@ -5,21 +5,21 @@
 class Gg < Formula
   desc "Fast terminal git client for very large monorepos (TUI + scriptable CLI)"
   homepage "https://github.com/homeend/gigagit"
-  version "0.2.3"
+  version "0.2.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/homeend/gigagit/releases/download/v0.2.3/gg_0.2.3_darwin_amd64.tar.gz"
-      sha256 "f40f39f6b2f15cc72243554935576e349896acd9b82cfec1ab68c2e4d756c643"
+      url "https://github.com/homeend/gigagit/releases/download/v0.2.4/gg_0.2.4_darwin_amd64.tar.gz"
+      sha256 "068fc228564dbea0671dd26387787e8c4ba3b2d389a46c4180a9621a5ce1222b"
 
       define_method(:install) do
         bin.install "gg"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/homeend/gigagit/releases/download/v0.2.3/gg_0.2.3_darwin_arm64.tar.gz"
-      sha256 "0c5fb1fe4b0412ed04a24f516c01403e693c4dfca8b0d28a71586d05fdd86189"
+      url "https://github.com/homeend/gigagit/releases/download/v0.2.4/gg_0.2.4_darwin_arm64.tar.gz"
+      sha256 "bc61e93baa53a50df1fa07ea5fd9362b442459ead6b1283d4d3a9a4121a6993c"
 
       define_method(:install) do
         bin.install "gg"
@@ -29,15 +29,15 @@ class Gg < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/homeend/gigagit/releases/download/v0.2.3/gg_0.2.3_linux_amd64.tar.gz"
-      sha256 "a4d44c681f638da815a80ea1d2e33f52ec9926a4b874fb5a7ac47b61b475fa59"
+      url "https://github.com/homeend/gigagit/releases/download/v0.2.4/gg_0.2.4_linux_amd64.tar.gz"
+      sha256 "3b8527c30d7ba9bf1061eb5240e0b706a5691dd72f39120f75c8ea3edc577e08"
       define_method(:install) do
         bin.install "gg"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/homeend/gigagit/releases/download/v0.2.3/gg_0.2.3_linux_arm64.tar.gz"
-      sha256 "d4c7cb43db9807419fa48f13c6dae2a4bbaba6d411feff5f4e40b60aee90ab3a"
+      url "https://github.com/homeend/gigagit/releases/download/v0.2.4/gg_0.2.4_linux_arm64.tar.gz"
+      sha256 "3dc54cf16922142b0447ba9647603f04b23a5e4ca4d19913fbe0f70224bf4fc9"
       define_method(:install) do
         bin.install "gg"
       end
