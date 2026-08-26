@@ -5,21 +5,21 @@
 class Wt < Formula
   desc "Fast git worktree manager with lifecycle hooks and cd-on-switch shell integration"
   homepage "https://github.com/homeend/worktrees"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/homeend/worktrees/releases/download/v0.2.2/wt_0.2.2_darwin_amd64.tar.gz"
-      sha256 "69e00667157cd83cb3c2c15b12752c4e85c0b19a9ca0e306fbc24622fb65cd3d"
+      url "https://github.com/homeend/worktrees/releases/download/v0.2.3/wt_0.2.3_darwin_amd64.tar.gz"
+      sha256 "bde289e1262778ada88bb334330a5c8f66cb745c0e4740b35a2782e670258142"
 
       define_method(:install) do
         bin.install "wt"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/homeend/worktrees/releases/download/v0.2.2/wt_0.2.2_darwin_arm64.tar.gz"
-      sha256 "636e33b709af413cddb1a23cda301068f898ecc85bb1c06fd3cc70636efb3d6f"
+      url "https://github.com/homeend/worktrees/releases/download/v0.2.3/wt_0.2.3_darwin_arm64.tar.gz"
+      sha256 "af4994adda54e1c2d4fc2ba57e857971cb67eb53e3956cbe9bc6ca174040ddb0"
 
       define_method(:install) do
         bin.install "wt"
@@ -29,15 +29,15 @@ class Wt < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/homeend/worktrees/releases/download/v0.2.2/wt_0.2.2_linux_amd64.tar.gz"
-      sha256 "ae47cde5c5680e407af622ae8309b6db8afc4fb9c79c7420370196d93e5fb771"
+      url "https://github.com/homeend/worktrees/releases/download/v0.2.3/wt_0.2.3_linux_amd64.tar.gz"
+      sha256 "e3ebaba3674dbd5b2f03cf186b40251759894a6eb8124388c9ea4b5d6cee819c"
       define_method(:install) do
         bin.install "wt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/homeend/worktrees/releases/download/v0.2.2/wt_0.2.2_linux_arm64.tar.gz"
-      sha256 "6bfa62e025e7f31909ee00ce67d4f96d48d5b2847c7e3f09ac107cc0d4e3a856"
+      url "https://github.com/homeend/worktrees/releases/download/v0.2.3/wt_0.2.3_linux_arm64.tar.gz"
+      sha256 "dc13a9cc257f3c3ccdac84106f45ad9bf8824eb810940e8e06639cfb70074811"
       define_method(:install) do
         bin.install "wt"
       end
